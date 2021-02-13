@@ -146,7 +146,7 @@ app.use('/users', users);
 app.use('/', pages);
 
 // Start the server
-const port=process.env.PORT || 7878
+const port=process.env.PORT || 6886
 app.listen(port, function () {
     console.log('Server started on port ' + port);
 });
