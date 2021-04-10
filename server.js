@@ -8,15 +8,14 @@ var expressValidator = require('express-validator');
 var fileUpload = require('express-fileupload');
 var passport = require('passport');
 
-// Connect to db
-mongoose.connect(config.database);
+
+
+mongoose.connect("mongodb://safdar:66666688@cluster0-shard-00-00.ohntn.mongodb.net:27017,cluster0-shard-00-01.ohntn.mongodb.net:27017,cluster0-shard-00-02.ohntn.mongodb.net:27017/shopping?ssl=true&replicaSet=atlas-jmih4i-shard-0&authSource=admin&retryWrites=true&w=majority",{useNewUrlParser:true});
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function () {
-    console.log('Connected to MongoDB');
+    console.log('Connected to MongoDB atlas ');
 });
-
-// Init app
 var app = express();
 
 // View engine setup
@@ -146,7 +145,7 @@ app.use('/users', users);
 app.use('/', pages);
 
 // Start the server
-const port=process.env.PORT || 6886
+const port=process.env.PORT || 3000
 app.listen(port, function () {
     console.log('Server started on port ' + port);
 });

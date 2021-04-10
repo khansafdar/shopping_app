@@ -1,3 +1,3 @@
 module.exports={
-    database: process.env.URI || 'mongodb://localhost/shopping'
+    database:'mongodb+srv://safdar:66666688@cluster0.ohntn.mongodb.net/shopping?retryWrites=true&w=majority'
 }
